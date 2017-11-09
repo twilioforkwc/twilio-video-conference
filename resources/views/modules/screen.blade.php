@@ -16,9 +16,6 @@ function getUserScreen(sources, extensionId) {
         type: 'getUserScreen',
         sources: sources
     };
-    // chrome.runtime.sendMessage(extensionId, "test message", function(response){
-    //     console.log(response);
-    // });
     return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage(extensionId, request, response => {
             console.log(response);
@@ -60,16 +57,9 @@ async function option1() {
     const screenLocalTrack = new LocalVideoTrack(stream.getVideoTracks()[0]);
 
     screenLocalTrack.once('stopped', () => {
-        // Handle "stopped" event.
-        console.log('testestestest stop');
         loadVideo();
-        // var previewContainer = document.getElementById('local-media');
-        // previewContainer.appendChild(screenLocalTrack);
-        // attachTracks(previewTracks, previewContainer);
     })
     var previewContainer = document.getElementById('local-media');
-    // $('#local-media').addTrack(screenLocalTrack);
-    // attachParticipantTracks(screenLocalTrack, previewContainer);
 
     const room = await connect("{{ $videoToken }}", {
         name: "{{ $channelName }}",
@@ -81,10 +71,6 @@ async function option1() {
 
 // Option 2. First connect, and then add screenLocalTrack.
 async function option2() {
-    // const room = await connect("{{ $videoToken }}", {
-    //     name: "{{ $channelName }}",
-    //     tracks: []
-    // });
 
     const stream = await getUserScreen(['screen', 'tab'], 'bikeoopebcchgffeooemgegknihjdlcp');
     const screenLocalTrack = new LocalVideoTrack(stream.getVideoTracks()[0]);
@@ -97,28 +83,8 @@ async function option2() {
 
     if (activeRoom) {
         activeRoom.localParticipant.addTrack(screenLocalTrack);
-        // const localParticipant = activeRoom.localParticipant;
-        // localParticipant.videoTracks.forEach((track, trackId) => {
-        //     console.log(track.id);
-        //     // activeRoom.localParticipant.removeTrack(track);
-        //     track.videoTrack = screenLocalTrack;
-        // });
     };
-    // detachParticipantTracks(activeRoom.localParticipant);
-    // activeRoom.localParticipant[0] = screenLocalTrack;
 
     return activeRoom;
 }
-// setTimeout(function(){
-//     console.log('exected after waited 6 sec.');
-//     // option1();
-// }, 6000);
-// option1();
-// option2();
-// getUserScreen(['window', 'screen', 'tab'], 'bikeoopebcchgffeooemgegknihjdlcp');
-// var test = {
-//     "type": "getUserScreen",
-//     "sources": ["screen", "window", "tab"]
-// }
-// getUserScreen(["screen", "window", "tab"], 'bikeoopebcchgffeooemgegknihjdlcp');
 </script>
