@@ -15,12 +15,12 @@ class HttpsProtocol
      */
     public function handle($request, Closure $next)
     {
-        // if ($_SERVER["HTTP_HOST"] === 'localhost:8000') {
-        //     return $next($request);
-        // }
-        // if (!$this->is_ssl() && !(\Request::path() === 'login') && !(\Request::path() === 'register')) {
-        //     return redirect()->secure($request->getRequestUri());
-        // }
+        if ($_SERVER["HTTP_HOST"] === 'localhost:8000') {
+            return $next($request);
+        }
+        if (!$this->is_ssl() && !(\Request::path() === 'login') && !(\Request::path() === 'register')) {
+            return redirect()->secure($request->getRequestUri());
+        }
         return $next($request);
     }
 
