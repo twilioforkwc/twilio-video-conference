@@ -19,7 +19,8 @@ class CreateChannelsTable extends Migration
             $table->string('friendly_name');
             $table->string('channel_name')->index();
             $table->string('channel_sid')->index();
-            $table->datetime('expires_date')->index();
+            $table->datetime('from_date')->index();
+            $table->datetime('to_date')->index();
             $table->boolean('deleted_flg')->default(false)->index();
             $table->timestamps();
         });

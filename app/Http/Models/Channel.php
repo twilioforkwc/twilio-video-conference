@@ -16,7 +16,8 @@ class Channel extends Model
         'channel_name',
         'friendly_name',
         'channel_sid',
-        'expires_date',
+        'from_date',
+        'to_date',
     ];
 
     /**
@@ -34,7 +35,7 @@ class Channel extends Model
      */
     public function getRecords()
     {
-        return $this::Login()->Desc('expires_date')->get();
+        return $this::Login()->Desc('from_date')->get();
     }
 
     /**
@@ -43,7 +44,9 @@ class Channel extends Model
      */
     public function getRecordsExpired()
     {
-        return $this::where('expires_date', '<', date("Y-m-d H:i:s"))->where('deleted_flg', false)->get();
+        return $this::where('to_date', '<', date("Y-m-d H:i:s"))
+                    ->where('deleted_flg', false)
+                    ->get();
     }
 
     /**
@@ -63,7 +66,11 @@ class Channel extends Model
      */
     public function getRecordByChannelName($channel_name)
     {
-        return $this::where('channel_name', $channel_name)->where('deleted_flg', false)->first();
+        return $this::where('channel_name', $channel_name)
+                    ->where('deleted_flg', false)
+                    ->where('from_date', '<',date("Y-m-d H:i:s"))
+                    ->where('to_date', '>',date("Y-m-d H:i:s"))
+                    ->first();
     }
 
     /**
@@ -78,7 +85,8 @@ class Channel extends Model
             'channel_name' => $channel_name,
             'friendly_name' => $request->friendly_name,
             'channel_sid' => $request->channel_sid,
-            'expires_date' => date("Y-m-d H:i:s", strtotime($request->expires_date)),
+            'from_date' => date("Y-m-d H:i:s", strtotime("{$request->from_date} $request->from_time")),
+            'to_date' => date("Y-m-d H:i:s", strtotime("{$request->to_date} $request->to_time")),
         ]);
     }
 

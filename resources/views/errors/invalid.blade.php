@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">エラー</div>
                 <div class="panel-body">
-                    アクセス権限がないか、有効期限が切れています。
+                    アクセス権限がないか、有効期間外です。
                 </div>
             </div>
         </div>
