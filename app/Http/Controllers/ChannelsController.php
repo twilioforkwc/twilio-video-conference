@@ -140,11 +140,16 @@ class ChannelsController extends Controller
     {
         $this->validate($request, [
             'friendly_name' => 'bail|required',
-            'expires_date' => 'bail|required|future_date',
+            'from_date' => 'bail|required',
+            'from_time' => 'bail|required',
+            'to_date' => 'bail|required',
+            'to_time' => 'bail|required',
         ], [
             'friendly_name.required' => 'チャンネル名は必須です。',
-            'expires_date.required' => '有効期限は必須です。',
-            'expires_date.future_date' => '有効期限を過去の日付にすることはできません。',
+            'from_date.required' => '有効期限は必須です。',
+            'from_time.required' => '有効期限は必須です。',
+            'to_date.required' => '有効期限は必須です。',
+            'to_time.required' => '有効期限は必須です。',
         ]);
 
         try {

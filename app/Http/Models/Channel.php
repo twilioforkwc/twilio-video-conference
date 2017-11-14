@@ -98,6 +98,8 @@ class Channel extends Model
      */
     public function updateRecord($request, $model) {
         $model->friendly_name = $request->friendly_name;
+        $model->from_date = date("Y-m-d H:i:s", strtotime("{$request->from_date} $request->from_time"));
+        $model->to_date = date("Y-m-d H:i:s", strtotime("{$request->to_date} $request->to_time"));
         return $model->save();
     }
 

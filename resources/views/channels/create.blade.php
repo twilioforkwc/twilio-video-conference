@@ -1,29 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<style media="screen">
-.channel-control {
-    padding: 5px;
-}
-.datetime-control {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 5px;
-}
-.datetime-control > input:nth-of-type(2n) {
-    flex: 1;
-}
-.datetime-control > input:nth-of-type(2n+1) {
-    flex: 2;
-}
-.datetime-control > input {
-    margin: 0 5px;
-}
-.datetime-control > span {
-    display: flex;
-    align-items: center;
-}
-</style>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

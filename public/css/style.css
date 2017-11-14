@@ -114,6 +114,44 @@ body {
   margin: 10px;
 }
 
+.channel-control {
+  padding: 5px;
+}
+
+.datetime-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 5px;
+}
+
+.datetime-control > input:nth-of-type(2n) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.datetime-control > input:nth-of-type(2n+1) {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.datetime-control > input {
+  margin: 0 5px;
+}
+
+.datetime-control > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /**
  * チャットルーム
  */

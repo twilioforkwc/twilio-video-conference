@@ -72,6 +72,27 @@
     align-items: center;
     margin: 10px;
 }
+.channel-control {
+    padding: 5px;
+}
+.datetime-control {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px;
+}
+.datetime-control > input:nth-of-type(2n) {
+    flex: 1;
+}
+.datetime-control > input:nth-of-type(2n+1) {
+    flex: 2;
+}
+.datetime-control > input {
+    margin: 0 5px;
+}
+.datetime-control > span {
+    display: flex;
+    align-items: center;
+}
 
 /**
  * チャットルーム
