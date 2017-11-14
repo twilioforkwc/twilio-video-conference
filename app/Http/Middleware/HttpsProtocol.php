@@ -18,9 +18,12 @@ class HttpsProtocol
         if ($_SERVER["HTTP_HOST"] === 'localhost:8000') {
             return $next($request);
         }
-        if (!$this->is_ssl() && !(\Request::path() === 'login') && !(\Request::path() === 'register')) {
+        if (!$this->is_ssl()) {
             return redirect()->secure($request->getRequestUri());
         }
+        // if (!$this->is_ssl() && !(\Request::path() === 'login') && !(\Request::path() === 'register')) {
+        //     return redirect()->secure($request->getRequestUri());
+        // }
         return $next($request);
     }
 
