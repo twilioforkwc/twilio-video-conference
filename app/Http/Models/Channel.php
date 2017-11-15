@@ -110,7 +110,11 @@ class Channel extends Model
      */
     public function deleteRecord($model)
     {
-        return $model->delete();
+        // 削除ボタンがダブルクリックされたときなど、オブジェクトがない場合を考慮してのチェック
+        if ($model) {
+            return $model->delete();
+        }
+        return true;
     }
 
     /**

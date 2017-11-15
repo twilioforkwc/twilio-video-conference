@@ -171,11 +171,18 @@ class ChannelsController extends Controller
      */
     public function destroy($id)
     {
+        // Twilio側のチャンネルを削除
         try {
             $model = $this->channel_model->getRecordById($id);
-            if (!$model->deleted_flg) {
+            if ($model && !$model->deleted_flg) {
                 $this->twilio_api->deleteChannel($model->channel_sid);
             }
+        } catch (\Exception $e) {
+            $errorcd = 'E5204';
+            \Log::error(\Lang::get("errors.{$errorcd}"), [$e]);
+        }
+        // システム側のレコードを削除
+        try {
             $this->channel_model->deleteRecord($model);
         } catch (\Exception $e) {
             $errorcd = 'E5204';

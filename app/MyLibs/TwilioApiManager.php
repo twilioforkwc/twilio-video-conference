@@ -167,10 +167,12 @@ class TwilioApiManager
      */
     public function deleteChannel($channel_sid)
     {
-        return $this->client->chat
+        if ($this->retrieveChannel($channel_sid)) {
+            return $this->client->chat
                 ->services(\Config::get('services.twilio.service_sid'))
                 ->channels($channel_sid)
                 ->delete();
+        }
     }
 
 }
