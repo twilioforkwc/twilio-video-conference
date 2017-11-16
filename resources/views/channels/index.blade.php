@@ -39,7 +39,7 @@
                     <div class="control-box">
                         <div style="padding: 5px;">
                             @if ($data->deleted_flg)
-                            <span class="badge badge-expired"></span>
+                            <span class="badge badge-expired">終了</span>
                             @else
                             <span class="badge badge-primary">{{ date("Y年m月d日 H時i分", strtotime($data->from_date)) }}から{{ date("Y年m月d日 H時i分", strtotime($data->to_date)) }}まで有効</span>
                             @endif
