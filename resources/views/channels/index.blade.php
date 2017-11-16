@@ -38,7 +38,6 @@
                     </div>
                     <div class="control-box">
                         <div style="padding: 5px;">
-                            {{ $data->deleted_flg }}
                             @if ($data->deleted_flg)
                             <span class="badge badge-expired">終了</span>
                             @else
