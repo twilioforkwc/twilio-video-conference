@@ -53,7 +53,7 @@ const { connect, LocalVideoTrack } = Twilio.Video;
 
 // Option 1. Provide the screenLocalTrack when connecting.
 async function option1() {
-    const stream = await getUserScreen(['screen', 'tab'], 'omkdcmggmpfjfcdcjldlealfmbkobeck');
+    const stream = await getUserScreen(['screen', 'tab'], 'ikacpphgpgkggjeldlogmoiopiajahlk');
     const screenLocalTrack = new LocalVideoTrack(stream.getVideoTracks()[0]);
 
     screenLocalTrack.once('stopped', () => {
@@ -72,7 +72,7 @@ async function option1() {
 // Option 2. First connect, and then add screenLocalTrack.
 async function option2() {
 
-    const stream = await getUserScreen(['screen', 'tab'], 'omkdcmggmpfjfcdcjldlealfmbkobeck');
+    const stream = await getUserScreen(['screen', 'tab'], 'ikacpphgpgkggjeldlogmoiopiajahlk');
     const screenLocalTrack = new LocalVideoTrack(stream.getVideoTracks()[0]);
 
     screenLocalTrack.once('stopped', () => {
