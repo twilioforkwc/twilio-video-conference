@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<style media="screen">
+    .screen-share-input > form > div {
+        padding: 10px 0;
+    }
+</style>
+@if ($request->chromeid)
 <div class="container" style="height: 80%;">
     <div class="row">
         <div class="col-md-8">
@@ -46,6 +52,27 @@
         </div>
     </div>
 </div>
+@else
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="">
+        <div class="panel panel-default">
+            <div class="panel-heading">画面共有IDを入力してください</div>
+            <div class="panel-body screen-share-input" style="max-height: 200px; overflow: scroll;">
+                <form class="form-group" action="{{ Request::fullUrl() }}" method="get">
+                    <div>
+                        <label for=""></label>
+                        <input class="form-control" type="text" name="chromeid" value="" required>
+                    </div>
+                    <div>
+                        <button class="btn btn-success" type="submit" name="button">入力したIDを使用する</button>
+                        <a class="btn btn-danger" href="{{ Request::fullUrl() }}?chromeid=none">画面共有を使用しない</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 @endsection
 
 @include('modules.twilio_libs')

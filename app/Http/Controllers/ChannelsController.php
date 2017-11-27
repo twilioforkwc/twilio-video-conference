@@ -91,7 +91,7 @@ class ChannelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($channel_name)
+    public function show(Request $request, $channel_name)
     {
         try {
             $userName = $this->auth_info->getOrGenerateAuthUser('email');
@@ -109,7 +109,7 @@ class ChannelsController extends Controller
             $errorcd = 'E5201';
             \Log::error(\Lang::get("errors.{$errorcd}"), [$e]);
         }
-        return view('channels.show', compact('accessToken', 'videoToken', 'channelName', 'friendlyName', 'userName'));
+        return view('channels.show', compact('accessToken', 'videoToken', 'channelName', 'friendlyName', 'userName', 'request'));
     }
 
     /**
