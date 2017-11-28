@@ -70,9 +70,9 @@ async function option1() {
 }
 
 // Option 2. First connect, and then add screenLocalTrack.
-async function option2() {
+async function option2(chromeid = null) {
 
-    const stream = await getUserScreen(['screen', 'tab'], "{{ $request->chromeid }}");
+    const stream = await getUserScreen(['screen', 'tab'], chromeid);
     const screenLocalTrack = new LocalVideoTrack(stream.getVideoTracks()[0]);
 
     screenLocalTrack.once('stopped', () => {

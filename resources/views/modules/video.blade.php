@@ -161,7 +161,7 @@ $(document).ready(function(){
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
         } else {
-            option2();
+            option2($('#chromeid').val());
             $(this).addClass('active');
         };
     });
