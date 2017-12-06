@@ -1,11 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<style media="screen">
-    .room-buttons > .btn {
-        margin: 5px 0;
-    }
-</style>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -50,8 +45,6 @@
                             <a class="btn btn-success" href="/channels/{{ $data->id }}/edit">
                                 編集
                             </a>
-                            <!-- <button class="btn btn-success" type="button" name="button">
-                            </button> -->
                             @else
                             <button class="btn btn-success" type="button" name="button" disabled="disabled">編集</button>
                             @endif
