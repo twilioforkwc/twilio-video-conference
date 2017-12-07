@@ -403,10 +403,6 @@ body {
   width: 100%;
 }
 
-#remote-media {
-  margin: -10px;
-}
-
 #remote-media > video {
   -webkit-box-flex: 1;
       -ms-flex: 1;
