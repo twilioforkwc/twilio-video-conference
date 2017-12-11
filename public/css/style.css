@@ -403,11 +403,14 @@ body {
   width: 100%;
 }
 
+#remote-media {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: scroll;
+}
+
 #remote-media > video {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: 0;
-  margin: 10px;
+  width: 50%;
+  padding: 5px;
 }
 

@@ -22,7 +22,8 @@
 <div class="content-wrapper">
     <div class="left-pane">
         <div style="width: 100%; height: 100%;">
-            <div id="remote-media"></div>
+            <div id="remote-media">
+            </div>
         </div>
     </div>
     <div class="right-pane">
