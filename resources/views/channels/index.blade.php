@@ -89,7 +89,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $('.click-copy-to-clipboard').on('click', function(){
-        copyTextToClipboard($('#clip-'+$(this).attr('data-clip')).text());
+        copyTextToClipboard($('#clip-'+$(this).attr('data-clip')).text().trim());
         $.notify($('#clip-'+$(this).attr('data-clip')).text()+'をクリップボードにコピーしました。', 'success');
     });
 });
