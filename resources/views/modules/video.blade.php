@@ -98,6 +98,7 @@ function roomJoined(room) {
         room.participants.forEach(detachParticipantTracks);
         activeRoom = null;
     });
+
 }
 
 // Activity log
