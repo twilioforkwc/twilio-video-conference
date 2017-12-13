@@ -7,7 +7,12 @@ var roomName;
 
 function attachTracks(tracks, container) {
     tracks.forEach(function(track) {
-        container.appendChild(track.attach());
+        console.log(container.id);
+        if(container.id === 'remote-media') {
+            $('#remote-media').prepend(track.attach());
+        } else {
+            container.appendChild(track.attach());
+        }
     });
 }
 
