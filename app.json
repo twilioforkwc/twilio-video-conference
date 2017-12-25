@@ -1,0 +1,7 @@
+{
+    "name": "Twilio Video Conference",
+    "description": "テレカンツールのサンプルコードです",
+    "repository": "https://github.com/twilioforkwc/[REPO]",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["twilio", "tele-conference", "remote", "video", "chat"]
+}
