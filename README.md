@@ -54,6 +54,12 @@ Configファイルの設定
 APP_URL=https://[作成したHerokuAppID].herokuapp.com
 DB_CONNECTION=sqlite
 ...(省略)...
+TWILIO_ACCOUNT_SID=[Twilio Account SID]
+TWILIO_ACCOUNT_TOKEN=[Twilio Account TOKEN]
+TWILIO_SERVICE_SID=[Twilio Service SID]
+TWILIO_API_KEY=[Twilio Api KEY]
+TWILIO_API_SECRET=[Twilio Api Secret KEY]
+...(省略)...
 ```
 
 マイグレーション実行
