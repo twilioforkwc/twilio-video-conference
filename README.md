@@ -2,7 +2,7 @@
 
 Twilioを使用したテレカンツールのサンプルプロジェクトです。
 Laravelフレームワーク上で動作し、Herokuアプリへデプロイします。
-Herokuアカウントをお持ちでない場合は、ngrokでローカル環境を一時的に公開します。
+Herokuアカウントをお持ちでない場合は、ngrokでローカル環境を一時的に公開します。
 
 ## 1. ソースコードの取得
 
@@ -100,14 +100,14 @@ https://twilio-video-conference.herokuapp.com/screen_share.zip
 
 インストールする
 
-* screen_share.zip を解凍する
+* screen_share.zip を解凍する
 * chrome://extensions/ を開き「デベロッパーモード」をチェックする
 * 「パッケージ化されていない拡張機能を取り込む」をクリックする
 * 解凍したディレクトリを読み込む
 
 画面共有を使う
 
-* 読み込んだ Add-On の ID をコピーする
+* 読み込んだ Add-On の ID をコピーする
 * ビデオチャットルームの「Enter Extension ID」にペーストする
 * 画面共有ボタンをクリックする
 
